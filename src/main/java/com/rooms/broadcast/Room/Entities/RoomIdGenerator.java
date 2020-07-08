@@ -24,7 +24,7 @@ public class RoomIdGenerator implements IdentifierGenerator {
         try {
             PreparedStatement statement=connection.prepareStatement("select count(id) from Room where id=?");
             while(idCount!=0) {
-                id = generator.generate(7);
+                id = generator.generate(6,7);
                 statement.setString(1, id);
                 ResultSet rs = statement.executeQuery();
 
